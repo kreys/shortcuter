@@ -32,7 +32,7 @@ Compatible with Unity 5 and 4.
 
 ## <a id="quick-start"></a>Quick start
 
-1\. Open *Shortcuter* by going to `Window/Shortcuter`.
+1\. Open *Shortcuter* by going to `Window/Shortcuter` or by using the keyboard shortcut (`CTRL + ALT + S` on Windows and `CMD + OPTION + S` on Mac).
 
 ![01](https://cloud.githubusercontent.com/assets/5340818/13431828/c57ca020-dfa9-11e5-9d38-b93d8378ac8c.png)
 
