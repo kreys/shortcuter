@@ -27,6 +27,9 @@ namespace Intentor.Shortcuter.Windows {
 
 		private void OnEnable() {
 			this.titleContent = new GUIContent("Shortcuter");
+		}
+
+		private void OnFocus() {
 			this.shortcuts = AssetUtils.LoadShorcutData();
 		}
 
