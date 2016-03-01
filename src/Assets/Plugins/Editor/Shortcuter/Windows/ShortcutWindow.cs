@@ -34,6 +34,15 @@ namespace Intentor.Shortcuter.Windows {
 			if (this.shortcuts == null) {
 				EditorGUILayout.HelpBox("No shortcut data found. Please reopen the window.", MessageType.Error);
 				return;
+			} else if (this.shortcuts.types.Count == 0) {
+				EditorGUILayout.HelpBox("There are no shortcuts available." +
+					"Click the button below to edit shortcuts", MessageType.Warning);
+
+				if (GUILayout.Button(new GUIContent("Edit shortcuts", "Add, remove and organize shortcuts."))) {
+					this.EditShortcuts();
+				}
+
+				return;
 			}
 
 			if (this.shortcuts.columns > 1) EditorGUILayout.BeginHorizontal();
