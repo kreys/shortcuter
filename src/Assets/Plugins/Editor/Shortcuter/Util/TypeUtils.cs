@@ -23,6 +23,8 @@ namespace Intentor.Shortcuter.Util {
 			types.Add("Animation", typeof(Animation));
 			types.Add("AudioMixer", typeof(AudioMixer));
 			types.Add("Material", typeof(Material));
+			types.Add("PhysicMaterial", typeof(PhysicMaterial));
+			types.Add("PhysicsMaterial2D", typeof(PhysicsMaterial2D));
 			types.Add("Shader", typeof(Shader));
 
 			var scriptableObjects = GetTypesDerivedOf(typeof(ScriptableObject));
