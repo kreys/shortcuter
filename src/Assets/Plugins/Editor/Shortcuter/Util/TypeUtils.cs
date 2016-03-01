@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.Audio;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -20,6 +21,7 @@ namespace Intentor.Shortcuter.Util {
 			types.Add("Script", typeof(UnityEngine.Object));
 			types.Add("AnimatorController", typeof(AnimatorController));
 			types.Add("Animation", typeof(Animation));
+			types.Add("AudioMixer", typeof(AudioMixer));
 			types.Add("Material", typeof(Material));
 
 			var scriptableObjects = GetTypesDerivedOf(typeof(ScriptableObject));
