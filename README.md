@@ -2,7 +2,7 @@
 
 **Simple shortcut utility for Unity**
 
- [![Donate](https://cloud.githubusercontent.com/assets/5340818/12418027/9434b3ea-be93-11e5-8395-253a3a1aade5.png)](http://donate.intentor.com.br/adic.html)
+ [![Donate](https://cloud.githubusercontent.com/assets/5340818/12418027/9434b3ea-be93-11e5-8395-253a3a1aade5.png)](http://donate.intentor.com.br/)
  
 ## Contents
 
