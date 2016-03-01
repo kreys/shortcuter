@@ -48,20 +48,21 @@ namespace Intentor.Shortcuter.Windows {
 				return;
 			}
 
-			if (this.shortcuts.columns > 1) EditorGUILayout.BeginHorizontal();
+			var totalLines = Mathf.Ceil(this.shortcuts.types.Count / (float)this.shortcuts.columns);
+			var columnWidth = (this.position.width / this.shortcuts.columns) - 4;
+			var index = 0;
 
-			var sum = 1;
-			for (var index = 0; index < this.shortcuts.types.Count; index++, sum++) {
-				this.DrawItem(this.shortcuts.types[index]);
+			for (var line = 0; line < totalLines; line++) {
+				EditorGUILayout.BeginHorizontal();
 
-				if (this.shortcuts.columns > 1 && sum == this.shortcuts.columns) {
-					EditorGUILayout.EndHorizontal();
-					EditorGUILayout.BeginHorizontal();
-					sum = 1;
+				for (var column = 0; column < this.shortcuts.columns; column++, index++) {
+					if (index < this.shortcuts.types.Count) {
+						this.DrawItem(this.shortcuts.types[index], columnWidth);
+					}
 				}
-			}
 
-			if (this.shortcuts.columns > 1) EditorGUILayout.EndHorizontal();
+				EditorGUILayout.EndHorizontal();
+			}
 		}
 
 		/// <summary>
@@ -75,8 +76,8 @@ namespace Intentor.Shortcuter.Windows {
 		/// Draws a shortcut type.
 		/// </summary>
 		/// <param name="shortcutType">Shortcut type to be drawn.</param>
-		private void DrawItem(ShortcutType shortcutType) {
-			EditorGUILayout.BeginVertical();
+		private void DrawItem(ShortcutType shortcutType, float columnWidth) {
+			EditorGUILayout.BeginVertical(GUILayout.Width(columnWidth));
 
 			EditorGUILayout.BeginHorizontal();
 			GUILayout.FlexibleSpace();
