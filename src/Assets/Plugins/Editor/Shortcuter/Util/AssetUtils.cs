@@ -11,7 +11,7 @@ namespace Intentor.Shortcuter.Util {
 	/// </summary>
 	public static class AssetUtils {
 		/// <summary>Editor default resources path.</summary>
-		private const string EDITOR_DEFAULT_RESOURCES = "Editor Default Resourcest";
+		private const string EDITOR_DEFAULT_RESOURCES = "Editor Default Resources";
 		/// <summary>Shortcuts data path.</summary>
 		private const string SHORTCUTS_DATA_PATH = EDITOR_DEFAULT_RESOURCES + "/Shortcuts.asset";
 

@@ -11,5 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b38093ec0974ead94e58f69bcfaa10, type: 3}
   m_Name: Shortcuts
   m_EditorClassIdentifier: 
-  columns: 3
-  types: []
+  columns: 2
+  types:
+  - columnTitle: Scenes
+    typeName: Scene
+    foldout: 1
+    guids: []
+  - columnTitle: Animators
+    typeName: AnimatorController
+    foldout: 1
+    guids: []
