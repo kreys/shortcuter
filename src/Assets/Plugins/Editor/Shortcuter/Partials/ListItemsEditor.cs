@@ -76,6 +76,11 @@ namespace Intentor.Shortcuter.Partials {
 		/// <param name="shortcutType">Shortcut type to be drawn.</param>
 		private void DrawTypeObjects(ShortcutType shortcutType) {
 			var guids = AssetUtils.GetAssetsGuid(shortcutType.typeName);
+
+			if (guids.Length == 0) {
+				EditorGUILayout.HelpBox("There are no objects for the selected type.", MessageType.Info);
+			}
+
 			foreach (var guid in guids) {
 				var exists = false;
 
