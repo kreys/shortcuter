@@ -15,7 +15,7 @@ namespace Intentor.Shortcuter.Windows {
 		/// <summary>Available shortcuts.</summary>
 		private ShortcutData shortcuts;
 
-		[MenuItem("Window/Shortcuter")]
+		[MenuItem("Window/Shortcuter %&s")]
 		public static void Init() {
 			var window = (ShortcutWindow)EditorWindow.GetWindow(typeof(ShortcutWindow), false);
 			window.Show();
