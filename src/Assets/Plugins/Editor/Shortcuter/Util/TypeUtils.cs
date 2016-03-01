@@ -16,6 +16,7 @@ namespace Intentor.Shortcuter.Util {
 		public static Dictionary<string, System.Type> GetShortcutTypes() {
 			var types = new Dictionary<string, System.Type>();
 			types.Add("Scene", null);
+			types.Add("Prefab", typeof(UnityEngine.Object));
 			types.Add("AnimatorController", typeof(AnimatorController));
 			types.Add("Animation", typeof(Animation));
 			types.Add("Material", typeof(Material));
