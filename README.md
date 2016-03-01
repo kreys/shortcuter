@@ -16,7 +16,7 @@
 
 ## <a id="introduction"></a>Introduction
 
-**Shortcuter** is an easy to use simple shortcut utility for Unity.
+*Shortcuter* is an easy to use simple shortcut utility for Unity.
 
 It features a dockable window which can be configured with shortcuts to most frequently used scenes and project objects.
 
