@@ -8,7 +8,7 @@
 Online documentation available at https://github.com/intentor/shortcuter/
 
 ================================================================================
- QUICK START
+QUICK START
 ================================================================================
 
 1. Open Shortcuter by going to Window/Shortcuter or by using the keyboard
@@ -25,7 +25,7 @@ of the columns displayed on the Shortcuter window.
 on the Shortcuter window.
 
 ================================================================================
- SUPPORT
+SUPPORT
 ================================================================================
 
 You can open an issue at https://github.com/intentor/shortcuter/issues or
