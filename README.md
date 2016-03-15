@@ -67,7 +67,7 @@ Please see [CHANGELOG.txt](src/Assets/Plugins/Editor/Shortcuter/CHANGELOG.txt).
 
 Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/shortcuter/issues) or send a pull request if you have a fix or extension.
 
-You can also send me a message at support@intentor.com.br to discuss more obscure matters about *Adic*.
+You can also send me a message at support@intentor.com.br to discuss more obscure matters about *Shortcuter*.
 
 ## <a id="license"></a>License
 
