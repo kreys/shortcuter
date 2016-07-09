@@ -5,6 +5,10 @@ Copyright (c) 2015-2016 Andre "Intentor" Martins
 http://intentor.com.br/
 -------------------------------------------------
 
+Version 1.1.1 (2016-07-09)
+
+- Fix displaying of deleted assets.
+
 Version 1.1 (2016-03-15)
 
 - Moved main project folder to Assets root.

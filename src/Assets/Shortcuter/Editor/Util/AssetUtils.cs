@@ -31,7 +31,8 @@ namespace Intentor.Shortcuter.Util {
 			if (!File.Exists(dataPath)) {
 				return CreateShortcutData();
 			} else {
-				return (ShortcutData)EditorGUIUtility.Load("Shortcuts.asset");
+				ShortcutData shortcutData = (ShortcutData)EditorGUIUtility.Load("Shortcuts.asset");
+				return ValidateObjects(shortcutData);
 			}
 		}
 
@@ -70,6 +71,25 @@ namespace Intentor.Shortcuter.Util {
 		/// <returns>All assets of the given type.</returns>
 		public static string[] GetAssetsGuid(string typeName) {
 			return AssetDatabase.FindAssets(string.Format("t:{0}", typeName));		
+		}
+
+		/// <summary>
+		/// Validates whether all the objects exists.
+		/// </summary>
+		/// <param name="shortcutData">Shortcut data to be validated.</param>
+		/// <returns>Validated shortcut data.</returns>
+		private static ShortcutData ValidateObjects(ShortcutData shortcutData) {
+			foreach (var shortcutType in shortcutData.types) {
+				for (var index = 0; index < shortcutType.guids.Count; index++) {
+					var assetPath = AssetDatabase.GUIDToAssetPath(shortcutType.guids[index]);
+					if (string.IsNullOrEmpty(assetPath) ||
+						!File.Exists(String.Concat(Application.dataPath, assetPath.Replace("Assets", "")))) {
+						shortcutType.guids.RemoveAt(index--);
+					}
+				}
+			}
+
+			return shortcutData;
 		}
 	}
 }
