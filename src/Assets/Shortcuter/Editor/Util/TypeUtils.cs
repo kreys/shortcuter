@@ -10,6 +10,9 @@ namespace Intentor.Shortcuter.Util {
 	/// Utility class for types.
 	/// </summary>
 	public static class TypeUtils {
+		/// <summary>Shortcuter main namespace. It's used to exclude types from the Shortcuter system.</summary>
+		private const string SHORTCUTER_NAMESPACE = "Intentor.Shortcuter";
+
 		/// <summary>
 		/// Gets all available shortcut types.
 		/// </summary>
@@ -30,7 +33,10 @@ namespace Intentor.Shortcuter.Util {
 			var scriptableObjects = GetTypesDerivedOf(typeof(ScriptableObject));
 			for (var index = 0; index < scriptableObjects.Length; index++) {
 				var type = scriptableObjects[index];
-				types.Add(type.FullName, type);
+
+				if (string.IsNullOrEmpty(type.Namespace) || !type.Namespace.StartsWith(SHORTCUTER_NAMESPACE)) {
+					types.Add(type.FullName, type);
+				}
 			}
 
 			return types;

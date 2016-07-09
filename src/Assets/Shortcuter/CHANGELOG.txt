@@ -7,7 +7,8 @@ http://intentor.com.br/
 
 Version 1.1.1 (2016-07-09)
 
-- Fix displaying of deleted assets.
+- Fix displaying of deleted assets on the Shortcuter window.
+- Fix displaying of Shortcuter types on the add item drop down.
 
 Version 1.1 (2016-03-15)
 
