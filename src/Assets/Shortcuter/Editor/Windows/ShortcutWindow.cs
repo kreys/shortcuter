@@ -94,7 +94,7 @@ namespace Intentor.Shortcuter.Windows {
 
 					if (GUILayout.Button(fileName)) {
 						if (shortcutType.typeName == "Scene") {
-							#if UNITY_5_3
+							#if UNITY_5_3_OR_NEWER
 							EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
 							#else
 							EditorApplication.OpenScene(path);
