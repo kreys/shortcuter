@@ -7,7 +7,7 @@ http://intentor.com.br/
 
 Version 1.2 (2017-03-??)
 
-- Added question popup on scene change. [PR #2]
+- Added saving question popup on scene change. [PR #2]
 - Fixed compatibility with newer Unity versions. [PR #1]
 
 Version 1.1.1 (2016-07-09)
