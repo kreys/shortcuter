@@ -5,10 +5,15 @@ Copyright (c) 2015-2016 Andre "Intentor" Martins
 http://intentor.com.br/
 -------------------------------------------------
 
+Version 1.2 (2017-03-??)
+
+- Added question popup on scene change. [PR #2]
+- Fixed compatibility with newer Unity versions. [PR #1]
+
 Version 1.1.1 (2016-07-09)
 
-- Fix displaying of deleted assets on the Shortcuter window.
-- Fix displaying of Shortcuter types on the add item drop down.
+- Fixed displaying of deleted assets on the Shortcuter window.
+- Fixed displaying of Shortcuter types on the add item drop down.
 
 Version 1.1 (2016-03-15)
 
