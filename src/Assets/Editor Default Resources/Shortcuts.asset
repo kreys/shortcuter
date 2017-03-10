@@ -15,8 +15,10 @@ MonoBehaviour:
   types:
   - columnTitle: Scenes
     typeName: Scene
-    foldout: 0
-    guids: []
+    foldout: 1
+    guids:
+    - e371f5c972ae04908b4ac511f08b94fd
+    - 0b0d6c23d2aa6438caf80489a777e222
   - columnTitle: Animators
     typeName: AnimatorController
     foldout: 0
