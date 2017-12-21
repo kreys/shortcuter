@@ -4,6 +4,7 @@ using UnityEditor.SceneManagement;
 using System.IO;
 using Intentor.Shortcuter.Util;
 using Intentor.Shortcuter.ValueObjects;
+using Intentor.Shortcuter.Partials;
 
 namespace Intentor.Shortcuter.Windows {
 	/// <summary>
@@ -92,18 +93,54 @@ namespace Intentor.Shortcuter.Windows {
 					var path = AssetDatabase.GUIDToAssetPath(guid);
 					var fileName = Path.GetFileNameWithoutExtension(path);
 
-					if (GUILayout.Button(fileName)) {
-						if (shortcutType.typeName == "Scene") {
-							#if UNITY_5_3_OR_NEWER
-							EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
-							#else
-							EditorApplication.OpenScene(path);
-							#endif
-						} else {
-							var type = TypeUtils.GetShortcutType(shortcutType.typeName);
-							var asset = AssetDatabase.LoadAssetAtPath(path, type);
-							AssetDatabase.OpenAsset(asset);
-						}
+                    if( shortcutType.typeName == "GameObject")
+                    {
+                        string name = guid;
+                        GameObject potentialObject = GameObject.Find(name);
+
+                        // skipping the button if object is not on the scene
+                        if (potentialObject != null)
+                        {
+                            GUILayout.BeginHorizontal();
+                            if (GUILayout.Button(name))
+                            {
+                                // finded proper scene game object
+                                Selection.activeGameObject = potentialObject;                                
+                            }
+                            if (GUILayout.Button("->", GUILayout.Width(40f)))
+                            {
+                                // finded proper scene game object
+                                SceneView scene = SceneView.lastActiveSceneView;
+                                if (scene == null && SceneView.sceneViews.Count > 0)
+                                    scene = SceneView.sceneViews[0] as SceneView;
+
+                                if (scene != null)
+                                    scene.pivot = potentialObject.transform.position;
+                                    
+                            }
+
+                            GUILayout.EndHorizontal();
+                        }
+                    }
+                    else
+                    {
+                        if (GUILayout.Button(fileName))
+                        {
+                            if (shortcutType.typeName == "Scene")
+                            {
+#if UNITY_5_3_AND_NEWER
+							    EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+#else
+                                EditorApplication.OpenScene(path);
+#endif
+                            }                            
+                            else
+                            {
+                                var type = TypeUtils.GetShortcutType(shortcutType.typeName);
+                                var asset = AssetDatabase.LoadAssetAtPath(path, type);
+                                AssetDatabase.OpenAsset(asset);
+                            }
+                        }					
 					}
 				}
 			}

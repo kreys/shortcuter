@@ -11,7 +11,7 @@ namespace Intentor.Shortcuter.Util {
 	/// </summary>
 	public static class AssetUtils {
 		/// <summary>Editor default resources path.</summary>
-		private const string EDITOR_DEFAULT_RESOURCES = "Editor Default Resources";
+		private const string EDITOR_DEFAULT_RESOURCES = "Plugins/Shortcuter";
 		/// <summary>Shortcuts data path.</summary>
 		private const string SHORTCUTS_DATA_PATH = EDITOR_DEFAULT_RESOURCES + "/Shortcuts.asset";
 
@@ -31,7 +31,7 @@ namespace Intentor.Shortcuter.Util {
 			if (!File.Exists(dataPath)) {
 				return CreateShortcutData();
 			} else {
-				ShortcutData shortcutData = (ShortcutData)EditorGUIUtility.Load("Shortcuts.asset");
+                ShortcutData shortcutData = AssetDatabase.LoadAssetAtPath("Assets/" + SHORTCUTS_DATA_PATH, typeof(ShortcutData)) as ShortcutData;                
 				return ValidateObjects(shortcutData);
 			}
 		}
@@ -80,6 +80,11 @@ namespace Intentor.Shortcuter.Util {
 		/// <returns>Validated shortcut data.</returns>
 		private static ShortcutData ValidateObjects(ShortcutData shortcutData) {
 			foreach (var shortcutType in shortcutData.types) {
+
+                // skip scene objects validation
+                if (shortcutType.typeName == "GameObject")
+                    continue;
+
 				for (var index = 0; index < shortcutType.guids.Count; index++) {
 					var assetPath = AssetDatabase.GUIDToAssetPath(shortcutType.guids[index]);
 					if (string.IsNullOrEmpty(assetPath) ||

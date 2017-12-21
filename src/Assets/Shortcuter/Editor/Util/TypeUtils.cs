@@ -20,6 +20,7 @@ namespace Intentor.Shortcuter.Util {
 		public static Dictionary<string, System.Type> GetShortcutTypes() {
 			var types = new Dictionary<string, System.Type>();
 			types.Add("Scene", null);
+            types.Add("GameObject", typeof(UnityEngine.Object));
 			types.Add("Prefab", typeof(UnityEngine.Object));
 			types.Add("Script", typeof(UnityEngine.Object));
 			types.Add("AnimatorController", typeof(AnimatorController));
@@ -34,8 +35,12 @@ namespace Intentor.Shortcuter.Util {
 			for (var index = 0; index < scriptableObjects.Length; index++) {
 				var type = scriptableObjects[index];
 
-				if (string.IsNullOrEmpty(type.Namespace) || !type.Namespace.StartsWith(SHORTCUTER_NAMESPACE)) {
-					types.Add(type.FullName, type);
+				if (string.IsNullOrEmpty(type.Namespace) || !type.Namespace.StartsWith(SHORTCUTER_NAMESPACE))
+				{
+					if( types.ContainsKey( type.FullName ) )
+						Debug.LogError( "Already added " + type.FullName );
+					else
+						types.Add(type.FullName, type);
 				}
 			}
 
