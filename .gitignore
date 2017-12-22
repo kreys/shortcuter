@@ -31,3 +31,4 @@ AssetStoreTools*
 Thumbs.db
 *.bak
 *.docx#
+src/.vs/
