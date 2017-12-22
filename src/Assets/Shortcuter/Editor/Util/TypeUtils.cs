@@ -21,7 +21,8 @@ namespace Intentor.Shortcuter.Util {
 			var types = new Dictionary<string, System.Type>();
 			types.Add("Scene", null);
             types.Add("GameObject", typeof(UnityEngine.Object));
-			types.Add("Prefab", typeof(UnityEngine.Object));
+            types.Add( "CustomAssets", typeof( UnityEngine.Object ) );
+            types.Add("Prefab", typeof(UnityEngine.Object));
 			types.Add("Script", typeof(UnityEngine.Object));
 			types.Add("AnimatorController", typeof(AnimatorController));
 			types.Add("Animation", typeof(Animation));

@@ -76,7 +76,15 @@ namespace Intentor.Shortcuter.Partials {
         /// <param name="shortcutType">Shortcut type to be drawn.</param>
         private void DrawTypeObjects(ShortcutType shortcutType)
         {
-            if (shortcutType.typeName != "GameObject")
+            if (shortcutType.typeName == "GameObject")
+            {
+                DrawTypeObjectForSceneGameObject( shortcutType );
+            }
+            else if( shortcutType.typeName == "CustomAssets" )
+            {
+                DrawTypeObjectsForCustomAssetsList( shortcutType );
+            }
+            else
             {
                 var guids = AssetUtils.GetAssetsGuid(shortcutType.typeName);
 
@@ -115,9 +123,60 @@ namespace Intentor.Shortcuter.Partials {
                 //Removes any empty elements from objects.
                 shortcutType.guids.Remove(string.Empty);
             }
-            else
+        }
+
+        private void DrawTypeObjectsForCustomAssetsList( ShortcutType shortcutType )
+        {
+            int length = shortcutType.guids.Count;
+
+            if( shortcutType.guids.Count == 0 )
             {
-                DrawTypeObjectForSceneGameObject(shortcutType);
+                EditorGUILayout.HelpBox( "There are no objects", MessageType.Info );
+            }
+
+            // Show existing assets
+            int indexToRemove = -1;
+            for( int i = 0; i < length; i++ )
+            {
+                string assetPath = AssetDatabase.GUIDToAssetPath( shortcutType.guids[i] );
+
+                if( string.IsNullOrEmpty( assetPath ) )
+                {
+                    EditorGUILayout.HelpBox( "Does not exist", MessageType.Warning );
+                }
+
+                //Check asset selection.                
+                EditorGUILayout.BeginHorizontal();
+                bool selected = EditorGUILayout.Toggle( true, GUILayout.Width( 30 ) );
+                EditorGUILayout.LabelField( assetPath );
+                EditorGUILayout.EndHorizontal();
+
+                if( !selected )
+                {
+                    indexToRemove = i;
+                }
+            }
+
+            if( indexToRemove > -1 )
+            {
+                shortcutType.guids.RemoveAt( indexToRemove );
+            }
+
+            EditorGUILayout.BeginHorizontal();
+            Object newShortcut = EditorGUILayout.ObjectField( null, typeof( Object ), true ) as Object;
+            EditorGUILayout.LabelField( "Drag scene GameObject with unique name" );
+            EditorGUILayout.EndHorizontal();
+
+            if( newShortcut != null )
+            {
+                if( AssetDatabase.Contains( newShortcut ) )
+                {
+                    shortcutType.guids.Add( AssetDatabase.AssetPathToGUID( AssetDatabase.GetAssetPath( newShortcut ) ) );
+                }
+                else
+                {
+                    EditorGUILayout.HelpBox( "Object is not an asset", MessageType.Warning );
+                }
             }
         }
 
