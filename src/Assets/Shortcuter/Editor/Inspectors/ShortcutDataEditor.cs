@@ -51,7 +51,11 @@ namespace Intentor.Shortcuter.Inspectors {
 			this.addItemEditor.OnInspectorGUI();
 			this.listItemsEditor.OnInspectorGUI();
 
-			if (GUI.changed) EditorUtility.SetDirty(target);
+            if( GUI.changed )
+            {
+                EditorUtility.SetDirty( target );
+                this.editorItem.SetTypesDirty();
+            }
 		}
 	}
 }

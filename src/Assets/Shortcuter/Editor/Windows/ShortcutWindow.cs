@@ -49,7 +49,7 @@ namespace Intentor.Shortcuter.Windows {
 				return;
 			}
 
-			var totalLines = Mathf.Ceil(this.shortcuts.types.Count / (float)this.shortcuts.columns);
+			var totalLines = Mathf.Ceil(this.shortcuts.mergedTypes.Count / (float)this.shortcuts.columns);
 			var columnWidth = (this.position.width / this.shortcuts.columns) - 4;
 			var index = 0;
 
@@ -57,8 +57,8 @@ namespace Intentor.Shortcuter.Windows {
 				EditorGUILayout.BeginHorizontal();
 
 				for (var column = 0; column < this.shortcuts.columns; column++, index++) {
-					if (index < this.shortcuts.types.Count) {
-						this.DrawItem(this.shortcuts.types[index], columnWidth);
+					if (index < this.shortcuts.mergedTypes.Count) {
+						this.DrawItem(this.shortcuts.mergedTypes[index], columnWidth);
 					}
 				}
 

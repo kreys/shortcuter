@@ -15,5 +15,20 @@ namespace Intentor.Shortcuter.ValueObjects {
 		public bool foldout;
 		/// <summary>GUIDs of resources of the particular type.</summary>
 		public List<string> guids;
-	}
+
+        public ShortcutType()
+        {
+            guids = new List<string>();
+        }
+
+        // copying constructor
+        public ShortcutType( ShortcutType copy )
+        {
+            columnTitle = copy.columnTitle;
+            typeName = copy.typeName;
+            foldout = copy.foldout;
+            guids = new List<string>(copy.guids.Count);
+            guids.AddRange( copy.guids );
+        }
+    }
 }
