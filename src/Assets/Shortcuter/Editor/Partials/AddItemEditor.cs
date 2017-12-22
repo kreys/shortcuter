@@ -50,6 +50,7 @@ namespace Intentor.Shortcuter.Partials {
 					guids = new List<string>()
 				};
 				this.editorItem.types.Add(item);
+                this.editorItem.SetTypesDirty();
 
 				this.addMode = false;
 			}
