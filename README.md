@@ -2,6 +2,9 @@
 
 **Simple shortcut utility for Unity**
 
+*Warning!* Asset store package is just for 1.2 release.
+1.3 and newer should be grabbed directly.
+
 [![Unity Asset Store](https://cloud.githubusercontent.com/assets/5340818/6855739/9e14c9e0-d3d9-11e4-9171-594941ed056f.png)](https://www.assetstore.unity3d.com/#!/content/57191)
  [![Donate](https://cloud.githubusercontent.com/assets/5340818/12418027/9434b3ea-be93-11e5-8395-253a3a1aade5.png)](http://donate.intentor.com.br/)
  
