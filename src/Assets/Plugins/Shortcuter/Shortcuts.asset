@@ -12,4 +12,22 @@ MonoBehaviour:
   m_Name: Shortcuts
   m_EditorClassIdentifier: 
   columns: 3
-  types: []
+  types:
+  - columnTitle: Scene Objects
+    typeName: Scene GameObjects (drag from scene)
+    foldout: 1
+    guids:
+    - CustomPlane2
+  - columnTitle: Managers
+    typeName: Project Assets (drag from project)
+    foldout: 1
+    guids:
+    - 2babf72954ce46748ae73279b6a91b88
+    - baad59b5c6b6d6d419737d95afd14b2b
+  - columnTitle: Other assets
+    typeName: Project Assets (drag from project)
+    foldout: 1
+    guids:
+    - 20d4b070aa3faa548a3993b85e96b121
+    - 45c48a8720c6c9f49845d47b9f4458ed
+    - 9ed963a7587200246adf6623a7612b38
