@@ -1,11 +1,13 @@
 -------------------------------------------------
 Shortcuter
 Shortcut utility for Unity
+Copyright (c) 2017-2018 Sebastian Janus
+Copyright (c) 2017 S³awomir Sokó³
 Copyright (c) 2015-2016 Andre "Intentor" Martins
 http://intentor.com.br/
 -------------------------------------------------
 
-Online documentation available at https://github.com/intentor/shortcuter/
+Online documentation available at https://github.com/kreys/shortcuter/
 
 == QUICK START ==
 
@@ -15,12 +17,29 @@ shortcut (CTRL + ALT + S on Windows and CMD + OPTION + S on Mac).
 2. When opening the Shortcuter window for the first time, no shortcuts are 
 available. Click on Edit shortcuts to bring the shortcuts editor.
 
-3. From the shortcuts editor, you can add as many shortcuts as you want based 
-on types available on your project and also configure the quantity and title
-of the columns displayed on the Shortcuter window.
+3. From the shortcuts editor, you can add as many shortcuts lists as you want. You can choose scene GameObject references, any assets from project lists, or a specific type.
 
-4. After selecting your most frequently used shortcuts, they'll be available 
-on the Shortcuter window.
+4. To add a reference, just drag and drop it. To remove, just deselect reference.
+
+IMPORTANT: scene GameObject reference are recognised just by name, so if you want to have a working shortcut it has to has an unique name.
+
+5. Scene GameObjects references are now appearing on the Shortcuter window, clicking on it's name will select it, clicking on the arrow next to it will center Scene view on this GameObject.
+
+6. If you choose Project Assets, you can drag and drop any assets from the Project window.
+
+Then they will be available on the Shortcuter window.
+
+7. From the shortcuts editor, you can add as many shortcuts as you want based on types available on your project and also configure the quantity and title of the columns displayed on the Shortcuter window.
+
+8. After selecting your most frequently used shortcuts, they'll be available on the Shortcuter window!
+
+9. There is also a possibility to merge different types of assets into one displayed list.
+
+Just use same column name for assets list that you want to appear as one list, then they will be automatically merged while displaying. However, they are still staying as different lists for edit purposes, so you can divide them at any time.
+
+== NEW FEATURES SUPPORT (from 1.3)
+
+You can open an issue at https://github.com/kreys/shortcuter/issues
 
 == SUPPORT ==
 
