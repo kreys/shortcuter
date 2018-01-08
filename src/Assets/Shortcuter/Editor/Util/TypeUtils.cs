@@ -10,8 +10,15 @@ namespace Intentor.Shortcuter.Util {
 	/// Utility class for types.
 	/// </summary>
 	public static class TypeUtils {
-		/// <summary>Shortcuter main namespace. It's used to exclude types from the Shortcuter system.</summary>
-		private const string SHORTCUTER_NAMESPACE = "Intentor.Shortcuter";
+
+        public const string SCENE_GAME_OBJECTS = "Scene GameObjects (drag from scene)";
+        public const string PROJECT_ASSETS = "Project Assets (drag from project)";
+
+        public const string DRAG_AND_DROP_TYPES_DIVIDER = "======== DRAG'N'DROP ========";
+        public const string LEGACY_TYPES_DIVIDER = "======== SPECIFIC TYPES ========";
+
+        /// <summary>Shortcuter main namespace. It's used to exclude types from the Shortcuter system.</summary>
+        private const string SHORTCUTER_NAMESPACE = "Intentor.Shortcuter";
 
 		/// <summary>
 		/// Gets all available shortcut types.
@@ -19,9 +26,11 @@ namespace Intentor.Shortcuter.Util {
 		/// <returns>The shortcut types.</returns>
 		public static Dictionary<string, System.Type> GetShortcutTypes() {
 			var types = new Dictionary<string, System.Type>();
-			types.Add("Scene", null);
-            types.Add("GameObject", typeof(UnityEngine.Object));
-            types.Add( "CustomAssets", typeof( UnityEngine.Object ) );
+            types.Add( DRAG_AND_DROP_TYPES_DIVIDER, null );
+            types.Add( SCENE_GAME_OBJECTS, typeof(UnityEngine.Object));
+            types.Add( PROJECT_ASSETS, typeof( UnityEngine.Object ) );
+            types.Add( LEGACY_TYPES_DIVIDER, null );
+            types.Add( "Scene", null );
             types.Add("Prefab", typeof(UnityEngine.Object));
 			types.Add("Script", typeof(UnityEngine.Object));
 			types.Add("AnimatorController", typeof(AnimatorController));
