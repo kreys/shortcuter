@@ -9,6 +9,7 @@
 
 1. <a href="#introduction">Introduction</a>
 2. <a href="#features">Features</a>
+3. <a href="#new-features">New Features</a>
 3. <a href="#quick-start">Quick start</a>
 3. <a href="#notes">Notes</a>
 3. <a href="#changelog">Changelog</a>
@@ -30,6 +31,14 @@ Compatible with Unity 5 and 4.
 * Configure shortcuts for most common Unity objects (Scenes, Scripts, Prefabs and more).
 * Create shortcuts for custom objects.
 * Persistent shortcuts data.
+
+## <a id="new-features"></a>New Features
+These are some new extensions, increasing original Shortcuter functionality:
+
+* Support for scene GameObject references (drag'n'drop)
+* Possibility to move scene view into GameObject reference (instead of selecting it)
+* Support for creating custom asset lists, with assets of various types, added with drag'n'drop
+* Possibility to merge different columns of assets into just one displayed when you use the same column name (for example for many ScriptableObject managers with just one instance)
 
 ## <a id="quick-start"></a>Quick start
 
