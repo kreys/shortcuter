@@ -129,7 +129,10 @@ namespace Intentor.Shortcuter.Windows {
                             if (shortcutType.typeName == "Scene")
                             {
 #if UNITY_5_3_OR_NEWER
-							    EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+                                if( EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() )
+                                {
+                                    EditorSceneManager.OpenScene( path, OpenSceneMode.Single );
+                                }
 #else
                                 EditorApplication.OpenScene(path);
 #endif
