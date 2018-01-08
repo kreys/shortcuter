@@ -54,6 +54,20 @@ These are some new extensions, increasing original Shortcuter functionality:
 
 ![03](https://cloud.githubusercontent.com/assets/5340818/13431827/c57a2886-dfa9-11e5-975a-78188943a376.png)
 
+3\. From the shortcuts editor, you can add as many shortcuts lists as you want. You can choose scene GameObject references, any assets from project lists, or a specific type.
+
+![07](images/add_new_types_list.png)
+
+4\. To add a reference, just drag and drop it. To remove, just deselect reference.
+
+ **IMPORTANT:** scene GameObject reference are recognised just by name, so if you want to have a working shortcut it has to has an unique name.
+
+![08](images/scene_game_objects_list.png)
+
+5\. Scene GameObjects references are now appearing on the *Shortcuter* window, clicking on it's name will select it, clicking on the arrow next to it will center *Scene view* on this GameObject.
+
+![09](images/select_or_center_scene_view.png)
+
 3\. From the shortcuts editor, you can add as many shortcuts as you want based on types available on your project and also configure the quantity and title of the columns displayed on the *Shortcuter* window.
 
 ![04](https://cloud.githubusercontent.com/assets/5340818/13431896/0845715c-dfaa-11e5-8e81-ba100da160bd.png)
