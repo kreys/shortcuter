@@ -76,11 +76,11 @@ namespace Intentor.Shortcuter.Partials {
         /// <param name="shortcutType">Shortcut type to be drawn.</param>
         private void DrawTypeObjects(ShortcutType shortcutType)
         {
-            if (shortcutType.typeName == "GameObject")
+            if( shortcutType.typeName == TypeUtils.SCENE_GAME_OBJECTS )
             {
                 DrawTypeObjectForSceneGameObject( shortcutType );
             }
-            else if( shortcutType.typeName == "CustomAssets" )
+            else if( shortcutType.typeName == TypeUtils.PROJECT_ASSETS )
             {
                 DrawTypeObjectsForCustomAssetsList( shortcutType );
             }

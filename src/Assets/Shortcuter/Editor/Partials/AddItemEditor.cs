@@ -21,7 +21,7 @@ namespace Intentor.Shortcuter.Partials {
 			get { return _addMode; }  
 			set {
 				_addMode = value;
-				this.typeIndex = 0;
+				this.typeIndex = 1;
 			}
 		}
 
@@ -41,6 +41,10 @@ namespace Intentor.Shortcuter.Partials {
 			this.typeIndex = EditorGUILayout.Popup(typeIndex, this.typeNames);
 			var typeName = this.typeNames[this.typeIndex];
 
+            if( typeIndex == 0 || typeIndex == 3 )  // these are just labels
+            {
+                EditorGUI.BeginDisabledGroup( true );
+            }
 			//Save.
 			if (GUILayout.Button(new GUIContent("+", "Add the shortcut type."), GUILayout.Width(30))) {
 				var item = new ShortcutType() {
@@ -55,8 +59,13 @@ namespace Intentor.Shortcuter.Partials {
 				this.addMode = false;
 			}
 
-			//Cancel.
-			if (GUILayout.Button(new GUIContent("X", "Cancel the adding of the shortcut type."), GUILayout.Width(30))) {
+            if( typeIndex == 0 || typeIndex == 3 )  // these are just labels
+            {
+                EditorGUI.EndDisabledGroup();
+            }
+
+            //Cancel.
+            if (GUILayout.Button(new GUIContent("X", "Cancel the adding of the shortcut type."), GUILayout.Width(30))) {
 				this.addMode = false;
 			}
 

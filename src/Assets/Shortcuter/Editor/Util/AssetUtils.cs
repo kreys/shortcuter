@@ -82,7 +82,7 @@ namespace Intentor.Shortcuter.Util {
 			foreach (var shortcutType in shortcutData.types) {
 
                 // skip scene objects validation
-                if (shortcutType.typeName == "GameObject")
+                if (shortcutType.typeName == TypeUtils.SCENE_GAME_OBJECTS )
                     continue;
 
 				for (var index = 0; index < shortcutType.guids.Count; index++) {
