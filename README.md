@@ -68,15 +68,33 @@ These are some new extensions, increasing original Shortcuter functionality:
 
 ![09](images/select_or_center_scene_view.png)
 
-3\. From the shortcuts editor, you can add as many shortcuts as you want based on types available on your project and also configure the quantity and title of the columns displayed on the *Shortcuter* window.
+6\. If you choose *Project Assets*, you can drag and drop any assets from the *Project* window. 
+
+![10](images/drag_and_drop_assets.png)
+
+Then they will be available on the *Shortcuter* window.
+
+![11](images/assets_on_the_list.png)
+
+7\. From the shortcuts editor, you can add as many shortcuts as you want based on types available on your project and also configure the quantity and title of the columns displayed on the *Shortcuter* window.
 
 ![04](https://cloud.githubusercontent.com/assets/5340818/13431896/0845715c-dfaa-11e5-8e81-ba100da160bd.png)
 
 ![05](https://cloud.githubusercontent.com/assets/5340818/13431895/083db46c-dfaa-11e5-8e93-36895a149694.png)
 
-4\. After selecting your most frequently used shortcuts, they'll be available on the *Shortcuter* window!
+8\. After selecting your most frequently used shortcuts, they'll be available on the *Shortcuter* window!
 
 ![06](https://cloud.githubusercontent.com/assets/5340818/13432396/27b26476-dfac-11e5-8f46-f3c6c4da64e3.png)
+
+9\. There is also a possibility to merge different types of assets into one displayed list.
+
+![12](images/names_merging_01.png) 
+![13](images/names_merging_02.png)
+
+Just use same column name for assets list that you want to appear as one list, then they will be automatically merged while displaying. However, they are still staying as different lists for edit purposes, so you can divide them at any time.
+
+![14](images/names_merging_03.png) 
+![15](images/names_merging_04.png)
 
 ## <a id="notes"></a>Notes
 
