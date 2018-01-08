@@ -93,7 +93,7 @@ namespace Intentor.Shortcuter.Windows {
 					var path = AssetDatabase.GUIDToAssetPath(guid);
 					var fileName = Path.GetFileNameWithoutExtension(path);
 
-                    if( shortcutType.typeName == "GameObject")
+                    if( shortcutType.typeName == TypeUtils.SCENE_GAME_OBJECTS )
                     {
                         string name = guid;
                         GameObject potentialObject = GameObject.Find(name);
