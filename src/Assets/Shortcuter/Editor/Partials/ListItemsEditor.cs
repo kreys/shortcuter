@@ -164,7 +164,7 @@ namespace Intentor.Shortcuter.Partials {
 
             EditorGUILayout.BeginHorizontal();
             Object newShortcut = EditorGUILayout.ObjectField( null, typeof( Object ), true ) as Object;
-            EditorGUILayout.LabelField( "Drag scene GameObject with unique name" );
+            EditorGUILayout.LabelField( "Drag any asset from Project window" );
             EditorGUILayout.EndHorizontal();
 
             if( newShortcut != null )
